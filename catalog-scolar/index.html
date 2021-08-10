@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <title>Catalog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        html,body,header, .mySlides{
+            /* cu asta imaginile de cover vor acoperi total pagina  */
+            height: 100%; 
+            }
+        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+        body {
+            font-size: 16px;
+        }
+        img {margin-bottom: -8px;}
+        .mySlides {display: none;}
+        .mySlides img{
+            width:100%;
+            height:auto;
+        }
+        #elev{
+            background-image: url("images/bglaptopl.jpg");
+            background-size: cover;
+        }
+        #administrator{
+            background-image: url("images/bglaptopl.jpg");
+            background-size: cover;
+        }
+        
+    </style>
+    <body>
+        <header class=" w3-center">
+            
+
+            <!-- cautare elev -->
+            <div class="w3-container">
+                <div id="id01" class="w3-modal">
+                    <div class="w3-modal-content" style="color:black">
+                        <div class="w3-container">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                            <img src="ionel.png" alt="Cautare">
+                            <form style="margin: 10px" method="post" action="cautare.php">
+                                <label>Nume elev</label>
+                                <input style="margin-top: 10px" placeholder="Nume..." type="text" name="nume" class="w3-input">
+                                <input style="margin-top: 10px" type="submit" name="submit" class="w3-button w3-green" value="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- login elevi  -->
+            <div class="mySlides" id="elev">
+                <div class="w3-display-middle w3-padding w3-hide-small" style="width:35%">
+
+                    <!-- "#id01" se refera la modalul de cautare de mai sus -->
+                    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black w3-round w3-hide-small" style="margin-bottom: 10px;">Cautare elev</button>
+                    <div class="w3-black w3-padding-large w3-round-large">
+                        <h1 class="w3-opacity w3-xlarge">Sunteti elev?</h1>
+                        <hr class="w3-opacity">
+                        <p>Conectati-va aici:</p>
+                        <p><a class="w3-button w3-block w3-green w3-round" href="logine/login.php">Login </a></p>
+                    </div>
+
+                    <!-- asta va disparea pe ecrane mici -->
+                    <a class="w3-button w3-black w3-round w3-hide-small w3-hover-light-grey" style="top: 100%; margin-top:10px;" onclick="plusDivs(1)"><span id="other1"></span> </a>
+                </div>
+                <!-- asta apare pt ecranele sunt mai mici decat dimensiunea medie, adica apare pe ecranele mici  -->
+                <a class="w3-button w3-display-middle w3-green w3-hide-large w3-hide-medium" href="logine/login.php">Login Elev</a>
+            </div>
+
+
+
+            <!-- login admin  -->
+            <div class="mySlides" id="administrator">
+               
+                <div class="w3-display-middle w3-padding w3-hide-small" style="width:35%">
+                   
+                   <div style="margin-bottom: 26px;">&nbsp;</div>
+                    <div class="w3-black w3-padding-large w3-round-large">
+                        <h1 class="w3-opacity w3-xlarge">Sunteti administrator?</h1>
+                        <hr class="w3-opacity">
+                        <p>Conectati-va aici:</p>
+                        <p><a class="w3-button w3-block w3-yellow w3-round" href="logina/login.php">Login </a></p>
+                    </div>
+                    <!-- asta va disparea pe ecrane mici  -->
+                    <a class="w3-button w3-black w3-round w3-hide-small w3-hover-light-grey" style="top: 100%; margin-top:10px;" onclick="plusDivs(1)"><span id="other2"></span></a>
+                </div>
+                <a class="w3-button w3-display-middle w3-green w3-hide-large w3-hide-medium" href="logina/login.php">Login Administrator</a>
+            </div>
+            
+            <!-- asta apare pe ecrane mici (w3-hide-medium)  -->
+            <!-- la astea cu w3 hide-medium (pt ecrane mici), merge cu top : n%;  -->
+            <a class="w3-button w3-black w3-hide-large w3-hide-medium w3-display-middle" style="top:60%" onclick="plusDivs(1)"><span id="other3"></span></a>
+            <!-- apare tot pe ecrane mici -->
+            <button onclick="document.getElementById('id01').style.display='block'" class=" w3-button w3-black w3-hide-medium w3-hide-large w3-round w3-display-middle" style="top: 40%">Cautare elev</button>
+        </header>
+        <script>
+            // Slideshow
+            var slideIndex = 1;
+            showDivs(slideIndex); //initial este 1, d-aia cand user ul intra prima oara pe pagina ii apare partea cu elevul            
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                x[slideIndex-1].style.display = "block";
+
+                //merge si cu astea comentate
+
+                if(slideIndex==2){ //cand e s a ajuns la pagina de administrator
+                    // document.getElementById("other1").innerHTML="Sunteti elev?"
+                    document.getElementById("other2").innerHTML="Sunteti elev?"
+                    document.getElementById("other3").innerHTML="Sunteti elev?"
+                }
+                else{
+                    document.getElementById("other1").innerHTML="Sunteti administrator?"
+                    // document.getElementById("other2").innerHTML="Sunteti administrator?"
+                    document.getElementById("other3").innerHTML="Sunteti administrator?"
+                }
+            }
+
+            
+        </script>
+        <script src="js/classie.js"></script>
+		<script src="js/uisearch.js"></script>
+		<script>
+			new UISearch( document.getElementById( 'sb-search' ) );
+		</script>
+    </body>
+</html>
+
+                    

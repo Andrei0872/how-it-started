@@ -1,0 +1,32 @@
+
+
+
+.check {
+    cursor: pointer;
+    color: #666;
+    line-height: 40px;
+}
+
+input[type=checkbox] {
+    /* pt ca vom folosi font awesome */
+    display: none; 
+}
+
+input[type=checkbox] + .label-text:before {
+    /* adaugam casuta  */
+
+    /* ca sa se vada casuta  */
+    font-family: 'FontAwesome';
+    /* codul casutei  */
+    content: "\f096";
+    width: 1em;
+    /* ca sa fie pe aceeasi linie cu textul  */
+    display: inline-block;
+    /* sa fie putin distantata */
+    margin-right: 5px;
+}
+
+input[type=checkbox]:checked + .label-text:before {
+    content: "\f14a";
+    color:#42f4a7;
+}
