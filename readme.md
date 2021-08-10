@@ -5,3 +5,5 @@ This repo contains a lot of memories from the beginning of my programming career
 At the beginning I used to spend a lot of time on solving algorithms, so there will be a dedicated directory in which I'll add the first problems that I solved, along with the file's creation date.
 
 I'll also add a few of my first projects I ever made. They don't bring much value, but they mean a lot to me.
+
+* [First problems solved](./first-problems-solved)
