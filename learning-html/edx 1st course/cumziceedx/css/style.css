@@ -1,0 +1,39 @@
+section p {
+    font-family: monospace;
+  } 
+  section > p {
+    font-weight: bold;
+    font-size: x-large;
+  }
+  body{
+      margin:20px;
+      padding:20px;
+  }
+  section > article > aside > p {
+    font-weight: bold;
+  }
+  section > article p {
+    font-style: italic;
+  }
+  @media (min-width: 500px) and (max-width: 1000px) {
+    section {
+        font-size: larger;
+
+    }
+    body{
+      background-color: greenyellow;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  article {
+      text-decoration: overline;
+  }
+  section > p{
+    letter-spacing: 10px;
+  }
+}
+@media print{
+  body > section {
+    text-decoration: line-through;
+  }
+}

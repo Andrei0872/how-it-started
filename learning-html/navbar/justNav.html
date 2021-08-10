@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:springgreen;
+            }
+    
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style:none;
+        }
+        /* in cazul acesta setam pt fiecare li lungimea si inaltimea */
+        ul li {
+            float: left;
+            height: 40px;
+            width: 120px;
+            background: black;
+            /* margin: 10px 10px; */
+            opacity: .8;
+            /* il asezam la mijloc din punct de vedere vertical */
+            line-height: 40px;
+            text-align:center;
+            margin-right: 5px;
+        }
+        
+        .tranzitie {
+            transition: all 0.7s;
+        }
+
+
+       ul li a {
+            text-decoration:none;
+            color: white;
+            display: block;
+        }
+
+      ul li a:hover {
+            color: green;
+        }
+
+        ul li ul li {
+            display: none;
+            background: yellow;
+            opacity: .7;
+        }
+
+        ul li ul li a{
+            text-transform:uppercase;
+            font-weight: bold;
+        }
+
+        ul li:hover ul li {
+            display: block;
+        }
+
+
+
+        /* UN INCEPUT BUN  */
+
+        @media(max-width: 400px) {
+            ul li {
+                width: 100%;
+            }
+            /* ul li:hover + li {
+                margin-top:100px;
+            } */
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li>
+            <a href="#">Welcome</a>
+        </li>
+        <li>
+            <a href="#">About us</a>
+            <ul class="tranzitie">
+                <li>
+                    <a href="#">Crew</a>
+                </li>
+                <li>
+                    <a href="#">Admin</a>
+                </li>
+                <li>
+                    <a href="#">Etc..</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Contact us</a>
+            <ul class="tranzitie">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Discord</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Things to do</a>
+            <ul>
+                <li><a href="#" class="tranzitie">Parties</a></li>
+                <li><a href="#" class="tranzitie">Sports</a></li>
+                <li><a href="#" class="tranzitie">Events</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">News</a>
+        </li>
+    </ul>
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+p{
+    font-style: italic;
+}
+article  p{
+font-size:x-small;
+
+}
+article > p{
+    color:#A6FF16;
+}
+article > section > p{
+color:blue;
+}
+article > section >p:last-child{
+    font-weight: bold;
+    font-size:1.5em;
+}
+#unul{
+    text-align: center;
+}
+.clasa >p:last-child{
+    text-decoration: underline;
+}
+.clasa >p:first-child{
+    text-decoration: overline;
+} /*primul p din clasa fiecarui el va respecta cerinta */
+section.clasa >p:last-child{
+    background-color: orange;
+    width:500px;
+}
+.clasa {
+    text-decoration: line-through;
+}
+.clasa > p {
+    border: 10px solid green; 
+}
+section.clasa > p:last-child {
+    border: 10px solid #00A7E9; 
+}
+article.clasa > p {
+    border: 10px solid #FF2B1C; 
+}
+section.nou >p:first-child {
+ letter-spacing: 10px;   
+
+}

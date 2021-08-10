@@ -1,0 +1,12 @@
+Document.documentElement returns the Element that is the root\
+ element of the 
+document (for example, the <html> element for HTML documents).
+
+documentElement -  returns the documentElement of the document,
+                    as an element object
+
+HTML documents -  the returned obj is the <html> element
+
+
+The difference between this property and the document.documentElement property, is that the document.body element returns the <body> 
+element, while the document.documentElement returns the <html> element.

@@ -1,0 +1,17 @@
+
+    nav{
+        display:block;
+        letter-spacing: 20px;
+    }
+    body{
+
+        background-color: white;
+        font-family: 'Times New Roman', Times, serif;
+     }
+     aside{
+         background-color: white;
+         color:yellow;
+         padding: 10px;
+         margin: 5px;
+     }
+}

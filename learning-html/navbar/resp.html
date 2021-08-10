@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        /* culori misto : -verde  :  #00795f; */
+                                  /* : #43a286;   */
+
+    /* basic resets */
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Arial Narrow', Arial, sans-serif;
+    }
+    /* se pot seta dimensiunile unui element si din witdh si padding !!!! */
+    header {
+        background: #00795f;
+        width: 100%;
+        padding: 40px 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    nav ul {
+        background: #43a286;
+        /* culoarea pe care o va mosteni a ul */
+        color:#fff;
+        padding: 0;
+        text-align: center;
+        /* ca sa fie lipit de header si sa dea o imagine misto! */
+        margin: 0;
+        list-style: none;   
+        overflow: hidden;
+        transition: max-height 0.9s;
+    }
+
+    nav ul li {
+        /* cu asta dispar punctele  in caz ca nu e definit list-style:none*/
+        display: inline-block;
+        padding: 20px;
+    }
+
+    section {
+        /* adica 1.5*16 */
+        line-height: 1.5em;
+        font-size: 0.9em;
+        padding: 40px;
+        width: 75%;
+        text-align: center;
+        /* il asez la mijloc */
+        margin: 0 auto;
+    }
+
+    nav ul li:hover{
+        background-color:#399077;
+    }
+
+
+    .handler {
+        width: 100%;
+        background: #005c48;
+        text-align: left;
+        box-sizing: border-box;
+        padding: 15px 10px;
+        color: #fff;
+        cursor: pointer;
+        /* font-size: 1.05em; */
+        display: none;
+    }
+
+    /* ca sa fie o tranzitie pt telefoane, ma folosesc de max-height */
+    @media screen and (max-width:400px) {
+        /* initial dispare navbar ul  */
+        nav ul {
+            max-height: 0;
+        }
+        .showing {
+            /* 20 * 16  */
+            max-height: 20em;
+        }
+        .handler {
+            display: block;
+        }
+        nav ul li {
+            /* ocupa toata lungimea  */
+            width: 100%;
+            padding: 15px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+    }
+    </style>
+
+</head>
+<body>
+    
+    <header>
+        <h1>A very nice website </h1>
+    </header>
+    
+    <nav>
+        <ul id="selector">
+            <a href="#"><li>Home</li></a>
+            <a href="#"><li>About us</li></a>
+            <a href="#"><li>Contact us</li></a>
+            <a href="#"><li>News</li></a>
+        </ul>
+        <div class="handler">Menu</div>
+    </nav>
+    
+    <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non consectetur earum placeat, alias maiores possimus asperiores adipisci unde iste nemo animi deserunt cupiditate voluptate nulla reprehenderit quo odio. Repudiandae nostrum temporibus facilis, tenetur provident quod, iure eius, accusamus dicta nesciunt natus vel exercitationem deleniti corrupti labore aut! Itaque voluptates velit, quos obcaecati similique aliquid sint culpa mollitia laborum necessitatibus laboriosam tempore suscipit inventore, deserunt doloremque omnis. Cupiditate dolor, quibusdam nostrum tempora officia sequi ducimus? Voluptate architecto sit quidem fuga enim similique, illo accusamus perspiciatis iure doloribus minima consequuntur excepturi. Odio, illum sint molestiae omnis laborum, quas perferendis, eos facere laboriosam officiis voluptatum accusantium iste expedita officia labore fuga nobis itaque ea distinctio numquam et quibusdam maxime est. Repudiandae, hic eligendi!
+    </section>
+
+
+    <script>
+    
+   const togg =  document.getElementsByClassName('handler')[0];
+   console.log(togg);
+   togg.addEventListener('click',function(e) {
+      document.getElementById('selector').classList.toggle('showing');
+   });
+    </script>
+
+</body>
+</html>

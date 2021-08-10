@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Wiggle Effect
+        </title>
+        <style>
+            body{
+                background: #000;
+            }
+            .btn{
+                text-decoration: none;
+                color: #fff;
+                background-color: coral;
+                height: 60px;
+                width: 200px;
+                display: block;/*pt a -l manipula mai usor, fiind in html un 'a' tag */
+                font-family: sans-serif;
+                font-weight: bold;
+                /* inaltimea unei linii */
+                line-height: 60px;
+                text-align: center;
+                font-size: 18px;
+                /*rotunjirea colturilor */
+                border-radius: 7px;
+                /*pozitionarea undeva la mijloc in pagina */
+                margin: 100px auto;
+                /*setarea animatiei*/
+                 -moz-transform: translateZ(0);
+                animation: wiggle 3s infinite;
+                -moz-animation: wiggle 3s infinite;
+                animation-timing-function: ease-in-out;
+                -moz-animation-timing-function: ease-in-out;
+                /*transform: rotate(30deg);*/
+                
+            }
+            /*crearea animatiei*/
+            @keyframes wiggle {
+                0%{transform: rotate(0deg)}/*pleaca nerotit*/
+                3%{transform: rotate(2deg)}
+                4%{transform: rotate(-2deg)}
+                5%{transform: rotate(0deg)}
+                100%{transform: rotate(0deg)}
+            } @-moz-keyframes wiggle {
+                0%{-moz-transform: rotate(0deg)}/*pleaca nerotit*/
+                3%{-moz-transform: rotate(2deg)}
+                4%{-moz-transform: rotate(-2deg)}
+                5%{-moz-transform: rotate(0deg)}
+                100%{-moz-transform: rotate(0deg)}
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#" class="btn">
+            submit
+        </a>
+    </body>
+</html>

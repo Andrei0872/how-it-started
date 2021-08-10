@@ -1,0 +1,15 @@
+{
+    "editor.autoIndent": false,
+    "git.ignoreMissingGitWarning": true,
+    "emmet.showAbbreviationSuggestions": false,
+    "emmet.showExpandedAbbreviation": "never",
+    "editor.accessibilitySupport": "off",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "explorer.autoReveal": true,
+    "html.autoClosingTags": false
+}

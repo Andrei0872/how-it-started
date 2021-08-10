@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<body onload="alert('the page has been loaded')" onunload="alert('bye bye!')">
+<button type="button" onclick="this.innerHTML=Date()">TIME</button> <span><ins> changes the content of its own element </ins></span>
+
+<h3>Function to display time when clicking a button </h3>
+<button type="button" onclick="DisplayTime()"> Click here to display time </button> 
+<p id="demo"></p>
+<h3> onmouseover </h3>
+<button onmouseover="document.getElementById('demo2').innerHTML='lalala'"> put the cursor on me </button>
+<p id="demo2"></p>
+<span onmouseover="this.style.color='red'" onmouseout="this.style.color='green'">Mouse over me!</span>
+<hr><br><br>
+<h3> onmouseout </h3>
+<button onmouseout="document.getElementById('demo3').innerHTML='Onmouseout'"> put the cursor on me </button>
+<p id="demo3"></p>
+<hr style="height:2px;color:gray"> <br><br>
+<h3> onchange example </h3>
+<p> Select the car that you like the most </p>
+<select id="mySelect" onchange="Change()"> 
+<option value="Audi"> Audi
+<option value="BMW">BMW
+<option value="Mercedes">Mercedes
+<option value="Logan">Logan
+</select>
+<p id="masini"></p>
+
+<p>This example uses the addEventListener() method to attach a "change" event to an input element.</p>
+
+Enter your name: <input type="text" id="fname">
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+<h4><ins> Using function </ins></h4>
+<p>This example uses the HTML DOM to assign an "onchange" event to an input element.</p>
+
+Enter your name: <input type="text" id="1fname">
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+<hr> <br><br>
+<h3> onkeydown example </h3>
+<input type="text" onkeydown="down()">
+<input type="text" id="red">
+<hr> <br><br>
+<h3> onkeyup example </h3>
+<p>Press and hold down a key inside the text field to set a red background color. Release the key to set a green background color.</p>
+
+<input type="text" id="dan" onkeydown="keydownFunction()" onkeyup="keyupFunction()">
+<hr><br><br>
+<h3> oninput example </h3>
+<p>Write something in the text field to trigger a function.</p>
+
+<input type="text" id="myInput" oninput="my1()">
+
+<p id="id1"></p>
+
+<hr><br><br>
+<script>
+function my1() {
+    var x = document.getElementById("myInput").value;
+    document.getElementById("id1").innerHTML = "You wrote: " + x;} 
+	
+document.getElementById("1fname").onchange = function() {lala()};
+
+function lala() {
+    var x = document.getElementById("1fname");
+    x.value = x.value.toUpperCase();
+}
+document.getElementById("fname").addEventListener("change", myFunction);
+
+function myFunction() {
+    var x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+}
+function keydownFunction() {
+    document.getElementById("dan").style.backgroundColor = "red";
+}
+function keyupFunction() {
+    document.getElementById("dan").style.backgroundColor = "green";
+}
+document.getElementById('red').addEventListener("keydown",culoare);
+function culoare() {
+document.getElementById('red').style.backgroundColor = "red";
+}
+function DisplayTime() {
+document.getElementById('demo').innerHTML=Date();
+}
+function Change() {
+var x=document.getElementById("mySelect").value;
+document.getElementById('masini').innerHTML="You selected: " +x;
+}
+function down(){
+alert('you pressed a key!');
+}
+</script>
+</body>
+</html>

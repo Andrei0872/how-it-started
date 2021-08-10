@@ -1,0 +1,43 @@
+
+
+css bg properties - used to define the bg effects for elements
+
+
+css background elements : 
+
+*background-color {
+ex :  background-color: colorName;
+
+colorName - valid color name : "red";
+         -hex value
+         -rgb value 
+};
+
+*background-image {
+  an image set as a background of an element
+  
+  ex :  background-image: url("paper.gif");
+
+  by default - the img repeats  both horizontally and vertically.
+};
+
+*background-repeat{
+ modul in care sa se afiseze imaginea in pagina
+};
+
+*background-attachment{
+specify if the img should be fixex - meaning that the img wont scroll with the rest of the page
+};
+
+*background-position{
+pozitia imaginii
+};
+
+*background- origin {
+originea 
+};
+
+CSS Syntax
+
+background: bg-color bg-image position/bg-size bg-repeat 
+bg-origin bg-clip bg-attachment initial|inherit;

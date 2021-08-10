@@ -1,0 +1,38 @@
+<!DOCTYPe html>
+<html>
+<head>
+    <title>HTML Page </title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Application form</legend>
+           <label> Full name:<input nanme="fullName" type="text"  required="required" placeholder="Enter your first name"/></label>
+           <label for="mailu"/>
+           Email Address:<input id="mailu" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="emailAddress" type="email" autocomplete="off" required="required" placeholder="Enter your e-mail address"/>
+            Website:<input name="website" type="url" required="required" placeholder="Enter your website url"/>
+
+        </fieldset>
+      <!-- <center> -->
+            <input type="submit" value="Enroll" />
+            <input name="img" type="image" src="img/inima.png" onmouseover="this.src='inima.png'" onmouseout="this.src='inima.png'" alt="inima"/>
+            <button>OK</button>
+            <button><img src="Smiley.png"/></button>
+            Colors
+            <select name="colors" size="3">
+<option value="1">red</option>
+<option value="2">green</option>
+<option value="3">blue</option>
+            </select>
+            Colors 2
+            <select name="colors" >
+                
+                    <option value="1">red</option>
+                    <option value="2">green</option>
+                    <option value="3">blue</option>
+                                </select>
+         <p>  <input type="reset" value="reset"/> </p>
+       <!-- </center> -->
+        </form>
+</body>
+</html>

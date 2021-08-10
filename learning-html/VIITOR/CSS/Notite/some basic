@@ -1,0 +1,54 @@
+
+Your cat photo currently has sharp corners. We can round out those corners with a CSS property called border-radius.
+
+border-radius - round the corners;
+
+u can use percentage, pixels..
+
+
+<a href="http://www.freecatphotoapp.com">cat photos</a>
+
+cat photos- anchor text
+a-anchor tag
+
+
+
+
+CSS RULE
+
+ex : h1 {color:blue;}
+
+ h1- selector
+ color - property 
+ blue - value       
+
+ COOL COLORS 
+ - maroon
+ -linen
+ -tomato
+ -DodgerBlue
+
+
+BORDER
+
+border : 2px solid Tomato;
+
+
+RGB VALUE
+
+rgb(red,green,blue); 
+
+HSL VALUE 
+
+hsl(hue,saturation,lightness);
+saturation - intensity of the color
+lightness - how  much light u want to give the color
+
+
+RGBA VALUE 
+
+rgba(red,green,blue,alpha);
+
+alpha - transparency - 0.0 => full transparent
+
+ANALOG LA HSLA

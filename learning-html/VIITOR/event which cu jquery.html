@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('input').keypress(function(event){
+        $('div').html("key that has been pressed " + event.which);
+    });
+});
+</script>
+</head>
+<body>
+
+Enter your name: <input type="text">
+
+<p>When you type in the field above, the div element below will display the key number.</p>
+<div />
+
+</body>
+</html>

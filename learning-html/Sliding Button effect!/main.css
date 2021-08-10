@@ -1,0 +1,126 @@
+html {
+    font-family: helevtica,serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+/*target grupul de butoane*/
+
+.btn_group {
+    width: 340px;
+    height: 40px;
+    padding: 10px 40px;
+    /* vertically centered 
+    si pt ca mai si avem 2 texte practic
+    */
+    line-height: 40px;
+    /* pt ca BUTTON BG va folosi ABSOLUTE pt a fi miscat */
+    position: relative; 
+    z-index:1;/*ca sa fie peste BG COLOR */
+    /* ca sa fie plasat la mijloc */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: white;
+}
+/* luam primul buton */
+.btn_one {
+    float: left; /*ca sa  apara primul in pagina */
+    /* ca sa se potriveasca cu lung lui btn group */
+    line-height: 40px;
+    color: white;
+    text-decoration: none;
+    transition: 1.0s;/*punem tranzitie pt ca isi va schimba
+    proprietatea cand dam hover la butonul al dou;ea
+    */
+}
+/* al doilea buton 
+ la care nu adaugam TRANSITION, pt ca nu este necesar 
+pt care span ul
+*/
+.btn_two {
+    float: right; /* ASA L AM PUS IN DREAPTA */
+    text-decoration: none;
+    line-height: 40px;
+    color: #a6afbf;
+}
+
+/* acum lucram la bg  care se va tot schimba 
+ e de retinut ca pt a l misca e nevoie sa schimbam MARGIN LEFT
+si WIDTH
+*/
+.btn_bg {
+    background-color: #2ABB9B;
+    height: 60px;/* inaltimea textului(40) + paddingul care e de 10 si sus si jos , adica 20*/
+    width: 170px;
+    /* poz va fi absoluta pt BTN GROUP, care are pozitia relativa !!!*/
+    position: absolute;
+    /* il asezam */
+    top:0;
+    /*
+    cum se va muta bg ul in spatele fiecarui cuvant
+    trebuie calculata lung 
+    initial il plasam la primul cuvant
+    */
+    margin-left: -220px;
+    z-index: -1; /* ca sa fie sub BGCOLOR */
+    transition: 1.0s; /* ca sa se potriveasca cu tranzitia primului buton */
+    border-radius: 5px;
+}
+
+/* acum vom muta bg color
+ FOLOSIND HOVER EFFECTS
+*/
+
+/*
+ targetam SPAN UL
++ - select elemente care sunt IMEDIAT DUPA
+DUPA SPAN, SE ALFA BTN BG
+*/
+span:hover + .btn_bg {
+    width: 252px;
+    /* cea ce controleaza unde sunt butoanele */
+    margin-left:-42px;
+}
+/*
+ schimbam culoarea textului 
+ > - fiecare span care l are ca parinte pe BTN_TWO
+*/
+
+.btn_two > span:hover{
+    color:white;
+}
+/* acum tre sa schimbam culoarea primului buton */
+/* ~ elementul care l precede pe btn_two, in cazul asta btn_one*/
+/*de asta l am pus pe btn 2 primul , ca sa l putem selecta pe primul 
+adica btn_one sa fie precedat de btn_two
+*/
+
+.btn_two:hover ~ .btn_one {
+    color: #a6afbf;
+}
+/* daca punem cursorul pe CONTINUE SHOPPING se observa 
+faptul ca textul nu se va schimba inainte ca bg ul sa se schimbe
+span ul nu e de aceeasi inaltime precum CONTINUE SHOPPING
+*/
+span {
+    padding: 20px 0;
+    /* ca sa se schimbe si culoarea cu o tranzitie */
+    transition: 1.0s;
+}
+
+@media(max-width:430px) {
+    .btn_group {
+        float:none;
+        width: 100%;
+    }
+}

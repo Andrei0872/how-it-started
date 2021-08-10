@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script> 
+var rezultat;
+function citire() {
+ rezultat=prompt("dati nr care trebue ghicit ","");
+}
+</script>
+</head>
+<body>
+
+<h2>JavaScript Math.random()</h2>
+
+<p>Every time you click the button, getRndInteger(min, max) returns a random number between 1 and 10 (both included):</p>
+<span> First Number : </span> <input type="text" id="first">
+<span> Second Number : </span> <input type="text" id="second">
+<button id="rez" onclick="citire()"> Pune cursorul aici pt a introduce nr care trebuie ghicit </button>
+<div>
+ <button onclick="display()">click me</button>
+</div>
+<p id="demo"></p>
+
+<script>
+var firstNumber = document.getElementById('first');
+var secondNumber = document.getElementById('second');
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+function display(){
+var num1=parseFloat(firstNumber.value);
+var num2=parseFloat(secondNumber.value);
+var text = "";
+var k =0;
+do {
+var random = getRndInteger(num1,num2);
+k++;
+text +="incercarea nr: " + k + " --> " + random + "<br>";
+}while(random != rezultat);
+document.getElementById('demo').innerHTML = text + k;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ordonare elemente din obiect </title>
+        <style>
+            .spatiu {
+                margin: 8px 20px;
+            }
+            p {
+                margin-left: 10px;
+               color: tomato;
+            }
+            .btn {
+                border: 2px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="spatiu btn" type="button" onclick="display('id1')"> Obj initial </button>
+            <p id="id1"></p>
+        <button class="spatiu btn" type="button" onclick="ordonareAn()" style="display: block"> Ordoneaza dupa An</button>
+            <p id="id2"></p>
+        <button class="spatiu btn" type="button" onclick="ordonareAlfa()"> Ordoneaza Alfabetic </button>
+            <p id="id3"></p>
+        <script>
+            console.log(1);
+            //crearea unui vector de obiecte
+           var masina = [
+               {type:"Logan", year:2005},
+               {type:"Seat", year:2009},
+               {type:"Renault", year:2002},
+               {type:"Dacia", year:1998},
+               {type:"BMW", year:2004},
+               {type:"Skoda", year:2005}
+           ];
+            ///asa se creeaza o copie de ARRAY
+            var copie = masina.slice();
+            console.log(copie);
+            ///-----
+            const display =  (id) => {
+                let text="";
+                for(let i = 0; i<masina.length;i++) {
+                    text +="<br>" + masina[i].type + " " + masina[i].year;
+                }
+                document.getElementById(id).innerHTML =text;
+            }
+            const ordonareAn =  () => {
+                masina.sort((a,b) => {
+                    return a.year - b.year;
+//                    if(a.year < b.year) {return -1;}
+//                    if(a.year > b.year) {return 1;}
+//                    return 0;
+                });
+                display("id2");
+            }
+            const ordonareAlfa = () => {
+                masina.sort((a,b) => {
+                    let x = a.type.toLowerCase();
+                    let y = b.type.toLowerCase();
+                    if(x < y ) {return -1;}
+                    if(x > y) {return 1;}
+                    return 0;
+                });
+                display("id3");
+            }
+        </script>
+    </body>
+</html>

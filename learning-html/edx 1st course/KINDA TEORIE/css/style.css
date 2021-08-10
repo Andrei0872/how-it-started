@@ -1,0 +1,61 @@
+section, header, footer {
+margin:20px;
+border:1px black double;
+padding:10px;
+
+min-height: 60px;
+letter-spacing: 4px;
+
+}
+.grayBackground{
+background-color:#f0f2f1;
+
+}
+.tanBackground{
+    background-color:rgba(21, 240, 39, 0.92);
+
+}
+.purpleBackground{
+background-color:#FF05B4;
+/*pt toate care au clasa asociata, ele vor avea aspectele enuntate in clase*/
+}
+header.purpleBackground{
+    font-weight: bold;
+    font-size:2em;
+    text-align: center; /*pt header ul din clas X.... */
+}
+header.purpleBackground >h1{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color:blue  ; /*pt h1 din hearder ul din clasa X... */
+
+}
+section {
+    line-height:20px;
+}
+
+/*.purpleBackground >h1{
+    text-decoration: line-through chartreuse;
+daca e asa nu face nimic, pt ca H1 n are clasa} */
+section.grayBackground{
+    color:#FF8000;
+}
+/*body  h1 {
+    text-decoration: line-through;
+}
+pt fiecare h1 din body se aplica linia */
+
+body > h1 {
+    text-decoration: overline;
+/* doar pt h1 aflat in body, nefiind inclus si n alte elemente*/
+}
+.purpleBackground >h1{
+    text-decoration: line-through; 
+text-align: right;} /* modifica h1 cu clasa respectiva */
+ 
+div > section > h1 {
+  color: palegreen;  
+  
+  }
+  #andrei {
+    text-align: center;
+}

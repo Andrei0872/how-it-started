@@ -1,0 +1,41 @@
+article{
+    font-weight: bold;
+}
+/*.spacer{
+    padding: 15px;
+    margin: 25px;
+    border: thin lightgray solid;
+} */
+article.spacer{
+    padding: 15px;
+    margin: 25px;
+    border: thin lightgray solid;} 
+    .babyBlueBackground{
+background-color: #57bcf4;
+    }
+    .grayBackground {
+        background-color: #BFB3B5;
+    }
+    
+    .blackBackground {
+        background-color: #242730;
+        
+    }
+    
+    .babyBlueText {
+        color: #57BCF4;
+    }
+    
+    section.purpleText {
+        color: #923C9B;
+    }
+    
+    article.purpleText {
+        color: #461559;
+    }  
+    body >article:first-child{
+        text-decoration: underline;
+    }
+    #unul{
+        text-align: center;
+    }

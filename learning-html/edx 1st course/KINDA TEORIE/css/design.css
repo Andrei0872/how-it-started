@@ -1,0 +1,62 @@
+body {
+    background-color: #fbf8e5;
+    color: #6e7d9e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+    background-color: #080607;
+    color: #A5B7C5;
+    padding:10px 20px;
+   /* margin:30px; */
+
+  
+}
+header > h1 {
+    letter-spacing: 5px;
+   
+    text-decoration:line-through underline;
+   
+    
+}
+article > h2 {
+    font-weight: bolder;
+    /*text-decoration: overline underline*/;
+    font-size:2em;
+   font-style:italic;
+   border:10px double blue;
+   width: 350px;
+   
+}
+article > h2::before {
+    content: "\002329";
+    color: #F9C989;
+}
+article > h2::after {
+    content: "\00232A";
+    color: #9089F9;
+}
+footer {
+    
+    background-color: #A5B7C5;
+    padding: 10px 10px;
+    border-style: dashed dotted solid ;
+    border-width: 5px 10px;
+    border-color: greenyellow tomato green;
+    height: 20px;
+    /*margin-left: 250px;
+     margin-right: 250px; pt a face footer ul sa fie in cenntru */
+    text-align: center;
+
+#para{
+/*border:solid red;
+border-width:30px;
+border-right: solid yellow;
+
+border-left: solid salmon;
+margin-left:100px;
+*/
+/*border:5px dashed seagreen;*/
+border-style:solid dashed double dotted;
+border-width:1px 5px 10px 20px;
+border-color: green goldenrod darkred dodgerblue;
+}

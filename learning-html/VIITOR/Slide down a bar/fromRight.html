@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>How to slide down a Nav bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+     
+    <style>
+    body {
+        margin :0;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
+
+    #myNav {
+        background-color: #333;
+        width: 100%;
+       /* padding: 15px; */
+        position: fixed; 
+        right : -3000px;
+      /*  display: block;  nu stiu exact cu ce afecteaza*/
+       display: block;  
+      transition: right 0.5s;
+    }
+ 
+    #myNav > a {
+        text-decoration: none;
+        padding: 15px;
+        float : left;
+        display: block;
+        color : tomato;
+        text-align:  center;
+        transition: background-color 0.7s;
+    }
+
+    #myNav > a:hover {
+        background-color: snow;
+        color :saddlebrown;
+    }
+        </style>
+
+</head>
+<body>
+    
+        <div id="myNav">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+            </div>
+      
+
+    <div style="padding:15px 15px 2500px;font-size:30px">
+        <p><b>This example demonstrates how to slide down a navbar when the user starts to scroll the page.</b></p>
+        <p>Scroll down this frame to see the effect!</p>
+        <p>Scroll to the top to hide the navbar.</p>
+        <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      
+      <script>
+            window.onscroll = function () {myScrollFunction()};
+
+           function myScrollFunction () {
+               if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById('myNav').style.right = "0";
+               } else {  document.getElementById('myNav').style.right = "-3000px";
+                    
+               }
+           }
+           
+          </script>
+</body>
+</html>

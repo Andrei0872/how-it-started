@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Calculator</title>
+<!--<meta http-equiv="refresh" content="0; url=http://facebook.com"> pt a te redirectiona direct spre fb de exemplu -->
+<style>
+table {
+	border : 5px solid yellow;
+	margin: 0 auto;
+		width:230px;
+		text-align: center;
+}
+<!--input.delete {
+  background-color: #ff0000;
+  box-shadow: 0 10px #7a0b0b;
+  padding-left: 180px;
+  width: 100%;
+} -->
+ button {
+    margin: 5px;
+    min-width: 40px;
+    min-height: 40px;
+    
+  
+    font-weight: 700;
+}
+
+  table input[type='button'] {
+  width: 50px;
+  color : red;
+	height: 50px;
+	margin: 3px 0;
+	font-family:  sans-serif;
+    font-size: 1.6em;
+  }
+.afisare {
+text-align:right;
+	height: 50px;
+	width: 100%;
+	background-color: #f2f;
+	color: white;
+	padding: 12px 20px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 4px dotted #777;
+}
+
+
+</style>
+</head>	
+<body>
+<h1 style="text-align:center" id="demo"> My first JS Calculator </h1>
+<div class="mycalc">
+<form name="calc" id="calc">
+	<table >
+	<tr>
+	<td>
+	<input type="text" placeholder="0" class="afisare" name="Input"  />
+	</td>
+	</tr>
+	<tr>
+	<td>
+	 <input type="button" value=" 1 " onclick="calc.Input.value +='1'">
+            <input type="button" value=" 2 " onclick="calc.Input.value +='2'">
+            <input type="button" value=" 3 " onclick="calc.Input.value +='3'">
+            <input type="button" value=" + " width="40%" onclick="calc.Input.value +='+'">
+            <br>
+            <input type="button" value=" 4 " onclick="calc.Input.value +='4'">
+            <input type="button" value=" 5 " onclick="calc.Input.value +='5'">
+            <input type="button" value=" 6 " onclick="calc.Input.value +='6'">
+            <input type="button" value=" - " onclick="calc.Input.value +='-'">
+            <br>
+            <input type="button" value=" 7 " onclick="calc.Input.value +='7'">
+            <input type="button" value=" 8 " onclick="calc.Input.value +='8'">
+            <input type="button" value=" 9 " onclick="calc.Input.value +='9'">
+            <input type="button" value=" * " onclick="calc.Input.value +='*'">
+            <br>
+            <input type="button" class="delee" value=" c " onclick="calc.Input.value =''">
+            <input type="button" value=" 0 " onclick="calc.Input.value +='0'">
+            <input type="button" value=" = " onclick="calc.Input.value =eval(calc.Input.value)">
+            <input type="button" value=" / " onclick="calc.Input.value +='/'">
+	</td>
+	</tr>
+	</table>
+</form>
+</div>
+</body>
+</html>
+
+
+
+<! -- (function() {
+    alert("Hello from IIFE!");
+})();
+
+
+=
+
+
+!function() {
+    alert("Hello from IIFE!");
+}();
+
+ -->

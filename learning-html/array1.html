@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+<p>The length property returns the length of an array.</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<div>
+<p id="push"></p>
+<button onclick="add()">APASA!!<button>
+</div>
+<hr>
+<p id="isArr"></p>
+<hr style="height:5px">
+ 
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.length;
+
+var fruits1, text, fLen, i;
+
+fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+    text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+document.getElementById("demo1").innerHTML = text;
+
+var cars = ["Logan", "Dacia"];
+function add(){
+cars.push("Seat Leon");
+document.getElementById('push').innerHTML =  cars;
+}
+
+ 
+var names =[];
+names[0]="Dan";
+names[1]="Ana";
+document.getElementById('isArr').innerHTML =isArray(names);//merge
+function isArray(x) {
+return x.constructor.toString().indexOf("Array") > -1;
+
+ 
+
+}
+
+</script>
+
+</body>
+</html>

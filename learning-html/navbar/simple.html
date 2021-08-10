@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html {
+            background: green;
+            /* background-repeat: no-repeat; */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .lista {
+            list-style: none;
+            /* asta ii impune o lungime mai limitata, in caz ca width nu e 100% */
+            position: fixed;
+            margin: 0;
+            padding: 0;
+            top: -100px;
+            /* left: 20px; */
+            /* setam width:100% pt a face navbarul putin RESPONSIVE */
+            width:100%;
+            text-align: center;
+            background-color: #595959;
+            padding: 20px 0 20px 0;
+            /* opacity: .7; */
+            transition: all 0.5s;
+            z-index: 1;
+        }
+        /* aici pt a delimita elementele din navbar se va seta un padding pe stanga si dreapta pt fiecare li */
+        .lista li {
+            display: inline-block;
+            /* adaugam un mic spatiu intre ele */
+            padding: 0 15px 0 15px;
+            border-right: 2px double white;
+        }
+        .lista li:last-child {
+            border: none;
+        }
+        .lista li a {
+            text-decoration: none;
+            color:#fff;
+            transition: 0.3s;
+        }
+        .lista li a:hover {
+            color:darkseagreen;
+        }
+    </style>
+
+</head>
+<body style="height: 2000px;">
+    
+    <ul class="lista" id="list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">News</a></li>
+    </ul>
+<div class="container" style="position: relative; top: 80px;">
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem architecto perspiciatis dolore consectetur mollitia ratione fugit assumenda nobis accusamus cumque fugiat iure, alias veritatis molestiae! Facere impedit doloremque enim suscipit!
+    </p>
+
+    <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem architecto perspiciatis dolore consectetur mollitia ratione fugit assumenda nobis accusamus cumque fugiat iure, alias veritatis molestiae! Facere impedit doloremque enim suscipit!
+        </p>
+        
+    <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem architecto perspiciatis dolore consectetur mollitia ratione fugit assumenda nobis accusamus cumque fugiat iure, alias veritatis molestiae! Facere impedit doloremque enim suscipit!
+        </p>
+        
+    <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem architecto perspiciatis dolore consectetur mollitia ratione fugit assumenda nobis accusamus cumque fugiat iure, alias veritatis molestiae! Facere impedit doloremque enim suscipit!
+        </p>
+        
+    <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem architecto perspiciatis dolore consectetur mollitia ratione fugit assumenda nobis accusamus cumque fugiat iure, alias veritatis molestiae! Facere impedit doloremque enim suscipit!
+        </p>
+        
+    <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem architecto perspiciatis dolore consectetur mollitia ratione fugit assumenda nobis accusamus cumque fugiat iure, alias veritatis molestiae! Facere impedit doloremque enim suscipit!
+        </p>
+</div>
+
+
+    <script>
+    
+        // selectam navbarul mai simplu
+        const navbar = document.getElementById('list');
+
+    window.addEventListener('scroll',function(e){
+        console.log(window.pageYOffset);
+        if(window.pageYOffset > 20) {
+            navbar.style.top = '30px';
+        } else {
+            navbar.style.top = '-1000px';
+        }
+    });
+    
+    </script>
+
+
+</body>
+</html>

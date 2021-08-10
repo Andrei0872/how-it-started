@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('div').mousedown(function(e){
+            $('div').append("</br><span style='color:green;'>key that has been pressed : " + e.which + "</span>");
+        });
+    });
+</script>
+</head>
+<body>
+
+
+<div style="border:1px solid black; width:400px; height:400px; margin:auto;" >
+    <p>
+        Press here to see what's happening
+    </p>
+</body>
+</html>
