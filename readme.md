@@ -7,7 +7,8 @@ At the beginning I used to spend a lot of time on solving algorithms, so there w
 I'll also add a few of my first projects I ever made. They don't bring much value, but they mean a lot to me.
 
 * [First problems solved](./first-problems-solved)
-* [Old Codewars repo](./old-old-codewars-repo)
+* [Old Codewars repo](./old-codewars-repo)
+* [Old Code Samples repo](./old-code-samples-repo)
 * [Catalog scolar](./catalog-scolar)
 * [Learning acorn](./learning-acorn)
 * [Learning Vue](./learning-vue)
