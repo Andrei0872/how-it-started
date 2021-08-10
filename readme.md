@@ -10,3 +10,4 @@ I'll also add a few of my first projects I ever made. They don't bring much valu
 * [Old Codewars repo](./old-old-codewars-repo)
 * [Catalog scolar](./catalog-scolar)
 * [Learning acorn](./learning-acorn)
+* [Learning Vue](./learning-vue)
