@@ -12,4 +12,4 @@ I'll also add a few of my first projects I ever made. They don't bring much valu
 * [Catalog scolar](./catalog-scolar)
 * [Learning acorn](./learning-acorn)
 * [Learning Vue](./learning-vue)
-* [Learning HTML](./learning-html) - There is my first website.
+* [Learning Web Development](./learning-web-development) - There is my first website.
