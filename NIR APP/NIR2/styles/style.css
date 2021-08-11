@@ -1,0 +1,220 @@
+.maxl{
+    margin:25px ;
+  }
+
+  /**
+   * todo : Facem radio btns 
+  */
+  /* facem radio urile sa fie inline  */
+  .inline{
+    display: inline-block;
+  }
+  /* le distantam putin, selectand al doilea radio  */
+/*
+ * se mai poate si : 
+    .inline + .inline{
+    margin-left:10px;
+      }
+ */
+  .inline:nth-of-type(2){  
+    margin-left:10px;
+  }
+  /* setam dimnesiunea fontului unui label  */
+  .radio{
+    color:#999;
+    font-size:15px;
+    position:relative;
+  }
+  /* marim distanta dintre scris si radio btn pt ambele cazuri */
+  .radio span{
+     /*ptcavaaveaun:;
+     aftercupozabsoluta*/position:relative;
+     padding-left:20px;
+     transition: 0.3s all;
+     -webkit-transition: 0.3s all;
+     -moz-transition: 0.3s all;
+     -ms-transition: 0.3s all;
+     -o-transition: 0.3s all;
+}
+/* setam cerculetul */
+  .radio span:after{
+    content:''; /**asa se pune mereu pt a crea ceva */
+    /* setam dimensiunile cerculetului */
+    width:15px;
+    height:15px;
+    /* setam grosimea marginii */
+    border:3px solid;
+    /* pt a-l pozitiona cum dorim */
+    position:absolute;
+    /* il pozitionam corespunzator */
+    left:0;
+    top:1px;
+    /* setam sa fie perfect rotund */
+    border-radius:100%;
+    -ms-border-radius:100%;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+    /* si padding ul, si marginea, tot, sa fie incluse in dimensiunea elementului */
+    box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+  }
+  
+  .radio input[type="radio"]{
+    cursor: pointer; 
+    /* cu astea 3 facem ca atunci cand dam hover peste btn sa apar cursor pointer */
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index: 1;
+    opacity: 0;
+  }
+  /* schimbam culoare cand e bifat */
+  .radio input[type="radio"]:checked + span{
+    color:rgb(25, 112, 128);  
+  }
+  /* punctuletul */
+  .radio input[type="radio"]:checked + span:before{
+    content:'';
+    width:5px;
+    height:5px;
+    position:absolute;
+    background:#0B8;
+    /*positionamlacentrulcerculetului*/left:5px;
+    top:6px;
+    /*ilfacemsafieperfectrotund*/border-radius:100%;
+    -ms-border-radius:100%;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+}
+
+  #radioContainer > p  {
+    margin: 10px 0 -5px 0;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+  }
+
+  /**
+   * todo : Lucru la "comenzi.php"; facem lista la produse
+  */
+
+  /* targetam div ul care contine produsele listate */
+  .autocomplete-lista {
+    /* vrem sa fie exact sub input si de aceeasi dimensiune */
+    
+    /* ca sa fie mai usor de facut asta, setam pozitia absoluta */
+    position: absolute;
+
+    /* facem sa fie sub input */
+    top: 100%;
+
+    /* facem sa fie la mijloc */
+    left: 0;
+    right: 0;
+    
+    /* adaugam border doar in parti */
+    border: 1px solid #d4d4d4;
+    border-top: none;
+    border-bottom: none;
+
+    /* ne asiguram ca nu este acoperit de ceva */
+    z-index: 100;
+  }
+
+  /* targetam elementele din lista  */
+  /* adica div urile care sunt copii div ului cu clasa .autocomplete-lista */
+  .autocomplete-lista div {
+    /* padding: 10px; */
+    cursor: pointer;
+    background-color: #fff; 
+    border: 1px solid #d4d4d4;
+    position: relative;
+  }
+
+  /* targetam etichetele (cele care contin tipul) produselor */
+  .autocomplete-lista div span {
+    position: absolute;
+    right: 15%;
+    top: 50%;
+  }
+
+
+
+  /**
+   * todo : lucru  la loading screen
+   */
+  @keyframes loader {
+    50% {
+      transform: translateY(-10px);
+      opacity: 0.3;
+      filter:  blur(5px);
+      -webkit-filter:  blur(5px);
+      -webkit-transform: translateY(-10px);
+      -moz-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      -o-transform: translateY(-10px);
+}
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .loadingWrapper {
+    background-color: #232027;
+    width: 100%;
+    height: 100%;
+  }
+ 
+  
+  .loader {
+    width: 100px;
+    height: 15px;
+    margin: -7px auto 0 auto;
+    position: relative;
+    top: 50vh;
+  }
+  
+  .loader > div {
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    float: left;
+    margin: 0 5px 0 0;
+    animation: loader 0.7s infinite;
+    opacity: 0.5;
+    border-radius: 10%;
+  }
+  
+  .loader > div:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .loader > div:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  .loader > div:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  
+  .loader > div:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
+  /**
+   * todo : lucru la badge de la sectiunea comenzi
+   * <!-- !!!important ------------------------------ -->
+      <!-- large screens: 1200px + -->
+      <!-- medium screens: 992 - 1200px  -->
+      <!-- small screens : 768-992 -->
+      <!-- extra small screens : 768- -->
+      <!-- ------------------------------ -->
+   * 
+   * 
+   */
