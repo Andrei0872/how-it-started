@@ -7,7 +7,7 @@ class Database {
 
   	private $_host = 'localhost';
     private $_username = 'linndows_user';
-    private $_password = 'g0@U1d78';
+    private $_password = '???';
     private $_database = 'linndows_learn';
    
      

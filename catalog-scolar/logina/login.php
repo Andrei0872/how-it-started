@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 session_start();
 $_SESSION['nume'] = '';
 $_SESSION['prenume'] ='';
-$crud = new mysqli('localhost','linndows_user', 'g0@U1d78', 'linndows_learn');
+$crud = new mysqli('localhost','linndows_user', '???', 'linndows_learn');
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     if(isset($_POST['submit'])) {
         $username =$crud->escape_string($_POST['username']);
