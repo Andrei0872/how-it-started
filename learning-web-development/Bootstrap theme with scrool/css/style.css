@@ -1,0 +1,113 @@
+/* Because the nav is top fixed */
+body{
+    margin-top: 70px;
+    font-size: 16px;
+}
+
+/* Same font family for all headings */
+h1,h2,h3,h4,h5,h6{
+    font-family: Poppins;
+}
+
+/* Same font family for all  paragraphs */
+p {
+    font-family: Roboto;
+}
+
+.navbar-default {
+    background: #fff;
+    border: 0;
+    font-family: Poppins;
+}
+
+/* Make the navbar more proeminent */
+.navbar-brand {
+    font-size: 20px;
+    color: #000 !important;
+    font-weight: bold;
+}
+
+#showcase h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+/* Make the image smaller */
+#showcase img{
+    width: 90%;
+    /* margin-left: 60px; */
+}
+
+#showcase .showcase-right {
+    margin-top: 60px;
+}
+
+#testimonial {
+    background: #f1f1f1;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#info2 {
+    margin: 20px 0 60px;
+}
+
+
+#testimonial p {
+    font-size: 32px;
+    font-family:'Arial';
+    color: #000;
+}
+
+#testimonial p.customer {
+    font-size: 20px;
+    color: #666;
+}
+
+#info1 .infor-right {
+    margin-top: 100px;
+}
+
+/* Set image background */
+#contact {
+    background: url(../img/image3.png);
+    padding: 40px;
+    /* Because image is dark */
+    color: #fff; 
+    border-top: #333 7px solid;
+    border-bottom: #333 7px solid;
+}
+
+footer {
+    padding: 30px;
+}
+
+@media all and (max-width:600px) and (min-width:300px) {
+    #showcase img {
+        width: 60%;
+    }
+    #info1 .info-left {
+        width: 30%;
+    }
+}
+
+
+#info1 .info-right  {
+    color:red;
+    margin-left: 30px;
+}
+
+
+@media all and (max-width:992px) {
+    #info1 .info-left {
+        margin-left: -100px;
+        width: 60%;
+    }
+}
+ 
+@media all and (max-width:759px) {
+    #info1 .info-left {
+        margin-left: 30px;
+    }
+}

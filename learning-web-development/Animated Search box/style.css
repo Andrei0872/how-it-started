@@ -1,0 +1,138 @@
+/* basic resets */
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+}
+
+/* setam culoarea background ului  */
+body {
+    background: #29313a;
+}
+
+/* vrem sa pozitionam, spre exemplu, search box ul la mijloc */
+.container {
+    /* absoluta la body  */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* pentru a - l pune complet la mijloc  */
+    transform: translate(-50%,-50%);
+}
+
+
+/* ii dam acestui div niste dimensiuni pt a aseza cum trebuie input ul si butonul  */
+.search-box {
+    /* pozitia relativa pt a - i aseza copii cum trebuie  */
+    position: relative;
+    /* este imp delimtarea dimensiunilor  */
+    /* in functie de ele, setam top, right etc !!! */
+    width: 450px;
+    height: 100px;
+    /* border: 2px solid black; */
+     /* - de proba - de folosit pt a intelege mai bine */
+}
+
+.input {
+    /* poz absoluta la search-box */
+    position: absolute;
+    top:20px;
+    right: 50px;
+    /* nu vrem sa depaseasca cumva dimensiunile  stabilite din cauza padding ului sau a margin ului */
+    /* box-sizing: border-box;  - l am adaugat la inceput*/
+    /* setam initial cu 0 pt ca la inceput nu va fi vizibila, ci doat atunci cand se va apasa pe buton */
+    width: 0px;
+    height: 63px;
+    border: 3px solid #62d474;
+    padding: 0 20px;
+    /* vrem sa dezactivam linia albastra ce apare daca selectam input ul */
+    outline: none;
+    /* vrem ca marginea input ului sa nu fie dreapta,ci ovala  */
+    border-radius:50px;
+    font-size: 18px;
+    color: #29313a;
+    /* ca sa aiba un efect frumos  */
+    transition: all 0.8s ease;
+}
+
+/* modificam culoarea placeholdeer ul  */
+::-webkit-input-placeholder {
+    color: #62d474;
+}
+::-moz-placeholder {
+    color: #62d474;
+}
+:-ms-input-placeholder {
+    color: #62d474;
+}
+
+
+/* butonul  */
+.btn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #62d474;
+    border-radius: 50%;
+    /* il asezam in dreapta input ului  */
+    top: 10px;
+    right: 45px;
+    cursor: pointer;
+    /* asezam icoana la mijloc  */
+    text-align: center;
+    line-height: 80px;
+    font-size: 20px;
+    color: #fff;
+    transition: all 0.8s ease;
+}
+
+.input.active {
+    /* apare animatia ca se mareste input ul  */
+    width: 350px;
+    /* ca sa para ca se misca  */
+    right: 100px;
+}
+
+.btn.animate {
+    /* aparea animatia de rotire, in timp ce se si misca  */
+    transform: rotate(-360deg);
+    /* ca sa para ca se misca  */
+    right: 100px;
+}
+
+/* pt ecrane mici  */
+@media only screen and (max-width: 600px) {
+   
+ .input.active {
+    width : 180px;
+    /* cat se deplaseaza  */
+    right: 55px; 
+}
+/* pt ca ecranul este mai mic, facem butonul sa se deplaseze mai putin  */
+.btn.animate {
+    right: 53px;
+}
+
+.input {
+    width: 0;
+    top:18px;
+    right: 38px;
+    height: 38px;
+}
+.btn {
+    height : 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    right: 35px;
+}
+
+.container {
+    padding-right: 38%;
+}
+
+}

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Content from here is not needed -->
+<div class="introduction">
+    <h1>Simple Modal</h1>
+    <p>Ease to implement in any project, only requires a ES2015 transpiler</p>
+  </div>
+  
+  
+  <button data-modal-trigger="form">Trigger modal #1</button>
+  <button data-modal-trigger="error-message">Trigger modal #2</button>
+  
+  <!-- Content of modal #1 --> 
+  <section data-modal="form" class="modal-wrapper">
+    <article class="modal-body">
+      <header>
+        <h2>This is a modal</h2>
+        <button class="close">close</button>
+      </header>
+      <div class="modal-main">
+      <img src="http://placehold.it/350x150" alt="palceholder">
+      <p>If content in this area is bigger than the screen the modal will become scrollable.</p>
+        <a href="#" class="cta">Call to action</a>
+        </div>
+      <footer>Footer area of modal</footer>
+    </article>
+  </section>
+  
+  <!-- Content of modal #2 -->
+  <section data-modal="error-message" class="modal-wrapper">
+    <article class="modal-body">
+      <header>
+        <h2>This is a modal</h2>
+        <button class="close">close</button>
+      </header>
+      <div class="modal-main">
+        error message
+      </div>
+      <footer>footer</footer>
+    </article>
+  </section>
+  
+<script src="script.js"></script>
+</body>
+</html>

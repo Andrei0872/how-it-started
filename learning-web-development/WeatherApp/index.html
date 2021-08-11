@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <!-- My css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Default resets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- In the container there 2 big sections : header(where you can see the input) and the section where you can see the informations about the city -->
+    <div class="container">
+        <header class="header">
+            <!-- Search for a city -->
+            <div class="search">    
+                <!-- Where to type the city name -->
+                <input type="text" placeholder="Enter city name" id="search-text">
+                <!-- Search button -->
+                <a href="javascript:void(0)" id="search-btn"><i class="fa fa-search"></i></a>
+            </div>
+        </header>
+
+        <main id="main">
+
+            <!-- City icon -->
+            <div class="city-icon">
+                <div class="city-icon-holder">
+                    <!-- Where to show the city name -->
+                    <div id="city-name"></div>
+                    <img src="" alt="" id="icon">
+                </div>
+            </div> <!-- End of city-icon div -->
+
+            <!-- City temperature -->
+            <div class="temperature">
+                <div id="temp"></div>
+            </div>            
+
+            <!-- City humidity -->
+            <div class="humidity">
+                <div id="humidity-div"></div>
+            </div>
+        </main>
+    </div> <!-- End of container -->
+<script src="script.js"></script>
+</body>
+</html>

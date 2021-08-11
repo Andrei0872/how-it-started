@@ -1,0 +1,59 @@
+<!-- https://www.youtube.com/watch?v=rVmZXJj5lH0&t=341s -->
+<html>  
+        <head>  
+             <title>Dynamically Add or Remove input fields in PHP with JQuery</title>  
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+        </head>  
+        <body>  
+             <div class="container">  
+                  <br />  
+                  <br />  
+                  <h2 align="center">Dynamically Add or Remove input fields in PHP with JQuery</h2>  
+                  <div class="form-group">  
+                       <form name="add_name" id="add_name">  
+                            <div class="table-responsive">  
+                                 <table class="table table-bordered" id="dynamic_field">  
+                                      <tr>  
+                                           <td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td>  
+                                           <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
+                                      </tr>  
+                                 </table>  
+                                 <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />  
+                            </div>  
+                       </form>  
+                  </div>  
+             </div>  
+        </body>  
+   </html>  
+   <script>  
+   $(document).ready(function(){  
+        var i=1;  
+        $('#add').click(function(){  
+             i++;  
+             //luam id ul liniei caci va trebui sa stergem linia.
+             var markup = ' <tr id="row'+i+'">  <td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">Remove</button></td></tr>  ' ;
+             $('#dynamic_field').append(markup); 
+             console.log($("#add_name").serialize()); 
+        });  
+        $(document).on('click', '.btn_remove', function(){  
+                // $(".btn_remove").on('click',function() {
+             var button_id = $(this).attr("id"); //obtinem id ul de la acel buton   
+             $('#row'+button_id+'').remove();  //stergem linia
+        });  
+        $('#submit').click(function(){       
+                console.log($("table tr").length);     
+             $.ajax({  
+                  url:"name.php",  //catre cine trimitem
+                  method:"POST",  //metoda....
+                  data:$('#add_name').serialize(),  //ce trimitem serverului
+                  success:function(data)  //daca totul a avut succes
+                  {  
+                       alert(data);  
+                       $('#add_name')[0].reset();  
+                  }  
+             });  
+        });  
+   });  
+   </script>

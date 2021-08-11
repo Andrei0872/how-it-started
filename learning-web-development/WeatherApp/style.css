@@ -1,0 +1,158 @@
+
+/* Add background color */
+body {
+    background-color: #eee; /* Some kind of grey */
+}
+
+/* Set the container dimensions */
+.container {
+    width: 500px;
+    height: 300px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    /* h-v-blur-spread */
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.3);
+    margin: 25vh auto; /* 25% of height of the viewport  */
+}
+
+/* Header */
+.header {
+    height:20%;
+    background-color: #FF9800;
+    
+    /* Get the shape of the container */
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    
+    text-align: center;
+    position: relative;
+}
+
+/* Humitidy and temperature */
+#temp, #humidity-div {
+    /*Somefondstyling*/font-family: 'Courier New';
+    font-weight: bold;
+    font-size: 60px;
+    color: #fff;
+
+    /*Center them */position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+}
+
+/* City icon */
+.city-icon-holder {
+    position: absolute;
+    left: 25%;
+    top: 40%;
+    transform: translate(-50%,-50%) ;
+    -webkit-transform: translate(-50%,-50%) ;
+    -moz-transform: translate(-50%,-50%) ;
+    -ms-transform: translate(-50%,-50%) ;
+    -o-transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+/* City name */
+#city-name {
+    font-family: 'Courier New';
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    /* In order to set the position of the other sections */
+    position: relative;
+}
+
+/* City icon */
+.city-icon {
+    height: 80%;
+    width: 50%;
+    background-color: #FFC107;
+    /* Get the shape of the container */
+    border-bottom-left-radius: 25px;
+}
+
+/* Set the position of temperature section */
+.temperature {
+    width: 50%;
+    height: 40%;
+    background-color: #9C27B0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+/* Set the position of humidity section */
+.humidity{
+    height: 40%;
+    width: 50%;
+    background-color: #E91E63;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    border-bottom-right-radius: 25px;
+}
+
+/* Search button */
+#search-btn {
+    color: #eee;
+    width: 50px;
+    height: 50px;
+    outline: none;
+}
+
+/* Search text(input) */
+#search-text {
+    color:red;
+    height: 30px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-style: none;
+    /* Disable the outline */
+    outline: none;
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+}
+/* Refers to the input when the placeholder is shown */
+#search-text:placeholder-shown {
+    border: 2px solid red;
+}
+/* Refers to the placeholder itself */
+#search-text::placeholder{
+    color:green;
+}
+#search-text::-moz-placeholder{
+    color:green;
+}
+#search-text::-webkit-input-placeholder{
+    color:green;
+}
+
+.search {
+    /*Centerit*/position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) ;
+    -webkit-transform: translate(-50%,-50%) ;
+    -moz-transform: translate(-50%,-50%) ;
+    -ms-transform: translate(-50%,-50%) ;
+    -o-transform: translate(-50%,-50%) ;
+}
+

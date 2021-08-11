@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>My modal</title>
+    <style>
+        body{
+            background-color: rgba(56, 28, 15, 0.664);
+            height: 100vh;
+        }
+
+        /* .container {
+            height: 100vh;
+            width: 100%;
+        } */
+
+        /* Style the button */
+        button {
+            color:#fff;
+            background: transparent;
+            border: 2px solid yellow;
+            padding: 8px 6px;
+            outline: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 20px;
+            position: relative;
+        }
+        button:before{
+            /* We don't want to show it initially */
+            width: 0;
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            opacity: .9;
+            left: 0;
+            bottom: 0;
+            background: yellow;
+            /* We will need a transition */
+            transition: all .3s ease;
+        }
+        button:hover::before{
+            width: 100%;
+        }
+        
+        /* Remove the inner dotted border */
+        button::-moz-focus-inner{
+            border: none;
+        }
+
+        .modal-wrapper {
+            display: none;
+            background-color: transparent;
+            transition: all .3s ease;
+        }
+        
+        .modal-wrapper.is-open {
+            display: block;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .modal-content {
+            overflow-y: scroll;
+            text-align: center;
+            width: 70%;
+            height: 300px;
+            border: 2px solid orange;
+            margin: 25vh auto;
+            position: relative;
+            animation: pop 0.5s ease;
+            background-color: white;
+        }
+        
+        header {
+            position: relative;
+        }
+
+        .close {
+            cursor: pointer;
+            position: absolute;
+            top: 8px;
+            right: 25px;
+            color: black;
+            outline: none;
+            border: none;
+        }
+        
+        .modal-content header {
+            padding:10px;
+            background: yellow;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+
+        .modal-content footer {
+            padding: 10px;
+            margin: 0;
+            background-color: red;
+        }
+        .modal-content .main-content {
+            padding: 10px;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Unimportant part -->
+        <div>
+            <h3>A modal example</h3>
+        </div>
+    
+        <!-- The button that will fire the modal -->
+        <button id="triggerModal"><span>Trigger modal</span></button>
+    
+        <!-- Modal -->
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <header>
+                    <h3>I am from header</h3>
+                    <!-- Close button -->
+                    <span class="close">&times;</span>
+                </header>
+                <div class="main-content">
+                    <div class="modal-main">
+                        <img src="http://placehold.it/350x150" alt="palceholder">
+                        <p>If content in this area is bigger than the screen the modal will become scrollable.</p>
+                        <a href="#" class="cta">Call to action</a>
+                    </div>
+                </div>  
+                <footer>
+                </footer>
+            </div>
+        </div>
+
+    </div>    
+<script>
+
+    const modalTrigger = document.querySelector("#triggerModal");
+    modalTrigger.addEventListener("click",function () {
+        document.querySelector(".modal-wrapper").classList.add("is-open");
+    });
+
+    document.querySelector(".close").addEventListener("click",function(){
+        document.querySelector(".modal-wrapper").classList.remove("is-open");
+    });
+
+</script>
+</body>
+</html>

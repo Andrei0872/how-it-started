@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- angular js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <title>To do app</title>
+    <style>
+        /* la cele selectate vrem sa apara taiate cu o linie */
+        .done-true {
+            text-decoration: line-through;
+            color: grey;
+        }
+        div:nth-of-type(1) {
+            margin: 30px auto;
+            max-height: 400px;
+            max-width: 700px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Sursa : http://jsfiddle.net/sunnycpp/u4vjR/2/ -->
+
+    <div ng-app="myApp">
+        
+        <h2>To do app made with AngularJSs</h2>
+        <h3>De facut</h3>
+        <div ng-controller="myCtrl">
+        <!-- afisam cate au ramas nefacute si nr de cerinte -->
+        {{remaining()}} din {{list.length}}
+        
+        <!-- butonul prin care se pot sterge toate cerintele   -->
+        <br><br>
+        <a href="#" ng-click="deleteAll()" style="text-decoration: none;letter-spacing: 2px; color:red;" >Sterge tot ce e facut</a>
+        <br>
+
+        <!-- buton de delete all -->
+        <div>
+            <a href="#" ng-click="del()">Stergeti absolut tot</a>
+        </div>    
+
+        <!-- buton pt a se bifa toate -->
+        <div>
+            <a href="#" ng-click="markAll()">Bifati tot</a>
+        </div>
+        <br>
+         <!-- buton pt a se debifa toate -->
+        <div>
+                <a href="#" ng-click="unmarkAll()">Debifati tot</a>
+        </div>
+
+        <!-- afisarea elementelor din lista  -->
+        <!-- afisam elementele doar daca exista cel putin 1  -->
+        <ul ng-show="list.length !=0">
+            <li style="margin-top:10px;" ng-repeat="item in list | filter:search ">
+                <input class="done-{{item.done}}" type="checkbox" ng-model="item.done" id="{{$index}}">
+                <!-- punem clasa astfel incat, daca dam pe el, isi va schimba "done" ul -->
+                <label style="cursor:pointer;" for="{{$index}}" class="done-{{item.done}}">{{item.text}}</label>
+                <!-- butonul prin care se sterge unul anume -->
+                <span style="cursor:pointer;margin-left: 5px;" ng-click="deleteThis($index)">&times;</span>
+            </li>
+        </ul>
+        
+        <!-- daca nu exita vreun element in lista, atunci afisam un mesaj  -->
+        <p ng-show="list.length == 0 " style="color:red;">Nu exista cerinte momentan</p>
+        
+
+        <br><br>
+        <!-- formul care permite adaugarea unei noi cerinte  -->
+        <form action="#" ng-submit="addInfo()" name="myForm">
+            <input type="text" ng-model="listText" name="myTask" size="30" placeholder="task..." required>
+            <input ng-disabled="myForm.myTask.$invalid" type="submit" value="adauga">
+        </form>
+    </div>    
+        
+    <!-- search ul  -->
+    <div style="margin: 20px;">
+        <input type="text" placeholder="Cauta.." ng-model="search">
+    </div>
+
+
+  
+
+    <div>
+        <small>
+            e nevoie de localStorage sau baze de date pt ca elementele din lista sa ramana in pagina si dupa page refresh
+        </small>
+    </div>
+
+    <script>
+        var app = angular.module('myApp',[]).controller('myCtrl',['$scope',function($scope) {
+            
+            //lista de lucruri care trebuiesc facute
+            $scope.list = [
+                {text:'primul lucru', done:true},
+                {text:'al doilea',done:false}
+            ];
+            
+            //functia prin care determinam cate cerinte au ramas nefacute
+            $scope.remaining = function() {
+                var count = 0;
+                angular.forEach($scope.list,function(item){
+                    //1 = daca e nefacuta, si o adunam
+                    //0 = daca e facuta, si practic nu o adunam
+                    count += item.done ? 0:1;
+                });
+                return count;
+            }
+
+            //functia prin care stergem tot 
+            $scope.deleteAll = function () {
+                //luam mai intai vectorul vechi intr o variabila, pt a putea alege cele care nu sunt facute, pentru a nu le sterge
+
+                //vectorul actual il tinem intr o alta variabil
+                var oldList = $scope.list;
+
+                //golim lista
+                $scope.list = [];
+
+                //punem inapoi elementele care nu s facute (done = false )
+                angular.forEach(oldList,function(item) {
+                    
+                    //daca nu e bifat, ramane in lista
+                    if(!item.done) $scope.list.push(item);
+                
+                });
+            }
+
+            // functia prin care adaug o noua cerinta in lista de cerinte 
+            $scope.addInfo = function () {
+                
+                //adaug in lista text ul si "done" setata automat "false"
+                $scope.list.push({text:$scope.listText, done:false});
+                
+                //resetam input ul
+                $scope.listText = '';
+
+            }
+
+            //functia prin care se sterge tot
+            $scope.del = function () {
+                $scope.list = [];
+            }
+
+            //functia prin care marcam totul
+            $scope.markAll = function () {
+                angular.forEach($scope.list,function(item){
+                    item.done = true;
+                });
+            }
+
+            //functia prin care se debifeaza toate
+            $scope.unmarkAll = function () {
+                angular.forEach($scope.list,function(item){
+                    item.done = false;
+                });
+            }
+
+            //functia prin care stergem elementelor din dreptul caruia s a dat click pe X
+            $scope.deleteThis = function(index) {
+                $scope.list.splice(index,1);
+            }
+
+        }]);
+    </script>
+</body>
+</html>
